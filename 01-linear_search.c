@@ -1,3 +1,7 @@
+/* Roll No:3
+   Alen Anto Abraham
+   01: Sequential search
+*/
 #include<stdio.h>
 
 int main(){
