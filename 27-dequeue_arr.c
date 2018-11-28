@@ -1,6 +1,6 @@
 /* Roll No:3
    Alen Anto Abraham
-   01: Sequential search
+   27:Implementation of dequeue using array
 */
 #include <stdio.h>
 
