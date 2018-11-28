@@ -1,6 +1,6 @@
 /* Roll No:3
    Alen Anto Abraham
-   01: Sequential search
+   21: Representation of arithmetic expressions using linked list
 */
 #include <stdio.h>
 #include <stdlib.h>
