@@ -1,6 +1,6 @@
 /* Roll No:3
    Alen Anto Abraham
-   01: Sequential search
+   30:Implementation of dequeue using LL
 */
 #include <stdio.h>
 #include <stdlib.h>
