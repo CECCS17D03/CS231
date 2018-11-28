@@ -2,73 +2,68 @@
    Alen Anto Abraham
    22: Stack: Infix to postfix conversion
 */
+
 #include <stdio.h>
-#include <stdlib.h>
 
-struct node {
-	char data;
-	struct node *next;
-}*HEADER;
-int deleteAll() {
-	struct node *ptr = HEADER, *prevPtr;
-	while (ptr != NULL) {
-		prevPtr = ptr;
-		ptr = ptr->next;
-		free(prevPtr);
-	}
-	HEADER->next = NULL;
-	return (0);
-}
-struct node *newNode() {
-	struct node *newptr = malloc(sizeof(struct node));
-	if (newptr == NULL) {
-		printf("Memory overflow");
-		deleteAll();
-		exit(0);
-	}
-	return (newptr);
-}
-int insertNodeEnd(int data) {
-	struct node *newptr = newNode(), *currentNode = HEADER;
-
-	while (currentNode->next != NULL) {
-		currentNode = currentNode->next;
-	}
-
-	newptr->next = currentNode->next;
-	newptr->data = data;
-	currentNode->next = newptr;
-	return (0);
-}
-
-int printLinkedList() {
-	struct node *currentNode = HEADER->next;
-	while (currentNode != NULL) {
-		printf("%c", currentNode->data);
-		currentNode = currentNode->next;
-	}
-  printf("\n");
-	return (0);
-}
-
-int main() {
-  char infix[100], buffer;
-  int i=0;
-	// initialize Linked List
-	HEADER = malloc(sizeof(struct node));
-	HEADER->data = 0;
-	HEADER->next = NULL;
-	// finished initializing Linked List
-
-  printf("Enter arithmatic expression : ");
-  scanf("%s", infix);
-  for (i=0; infix[i]!='\0'; i++) {
-    insertNodeEnd(infix[i]);
+int instackPriority(char symbol) {
+  switch(symbol) {
+    case '+':
+    case '-':
+      return 2;
+    case '*':
+    case '/':
+      return 4;
+    case '^':
+      return 6;
+    case '(':
+      return 0;
   }
-  printf("Entered experssion : ");
-  printLinkedList();
-
-	deleteAll();
-	
-	return (0);
+}
+int incomingPriority(char symbol) {
+  switch(symbol) {
+    case '+':
+    case '-':
+      return 1;
+    case '*':
+    case '/':
+      return 3;
+    case '^':
+      return 5;
+  }
+}
+int isOperand(char symbol) {
+  if ((symbol>=97 && symbol<=122) || (symbol>=65 && symbol<=90)) {
+    return 1;
+  }
+  return 0;
+}
+int main () {
+  char infix[20], stack[100];
+  int i, top=-1;
+  printf("Enter the infix expression : ");
+  scanf(" %s", infix);
+  printf("Postfix : ");
+  for (i=0; infix[i] != '\0'; i++) {
+    if (isOperand(infix[i])) {
+      printf("%c", infix[i]);
+    } else if (infix[i] == '(') {
+      stack[++top] = infix[i];
+    } else if (infix[i] == ')') {
+      while (stack[top] != '(') {
+        printf("%c", stack[top--]);
+      }
+      top--;
+    } else if (instackPriority(stack[top])>incomingPriority(infix[i])) {
+      while (instackPriority(stack[top])>incomingPriority(infix[i]) && top>-1) {
+        printf("%c", stack[top--]);
+      }
+      stack[++top] = infix[i];
+    } else {
+      stack[++top] = infix[i];
+    }
+  }
+  while (top > -1) {
+    printf("%c", stack[top--]);
+  }
+  printf("\n");
 }
