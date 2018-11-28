@@ -1,6 +1,6 @@
 /* Roll No:3
    Alen Anto Abraham
-   01: Sequential search
+   19: Stack using LL
 */
 #include <stdio.h>
 #include <stdlib.h>
