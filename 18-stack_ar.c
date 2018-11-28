@@ -1,6 +1,6 @@
 /* Roll No:3
    Alen Anto Abraham
-   01: Sequential search
+   18: Implementation of stack using array
 */
 #include <stdio.h>
 
