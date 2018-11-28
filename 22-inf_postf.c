@@ -1,6 +1,6 @@
 /* Roll No:3
    Alen Anto Abraham
-   01: Sequential search
+   22: Stack: Infix to postfix conversion
 */
 #include <stdio.h>
 #include <stdlib.h>
