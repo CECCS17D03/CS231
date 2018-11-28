@@ -1,3 +1,7 @@
+/* Roll No:3
+   Alen Anto Abraham
+   26: Implementation of queue using array
+*/
 #include <stdio.h>
 
 int queue[100], n=100, front=-1, rear=-1;
