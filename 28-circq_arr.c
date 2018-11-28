@@ -1,6 +1,6 @@
 /* Roll No:3
    Alen Anto Abraham
-   28:Implementation of circular queue using LL
+   28:Implementation of circular queue using array
 */
 #include <stdio.h>
 #define size 10
