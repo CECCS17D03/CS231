@@ -1,6 +1,6 @@
 /* Roll No:3
    Alen Anto Abraham
-   01: Sequential search
+   28:Implementation of circular queue using LL
 */
 #include <stdio.h>
 #define size 10
