@@ -1,6 +1,6 @@
 /* Roll No:3
    Alen Anto Abraham
-   01: Sequential search
+   23: Stack: Postfix expression evaluation
 */
 #include <stdio.h>
 #include <stdlib.h>
