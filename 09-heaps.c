@@ -1,6 +1,6 @@
 /* Roll No:3
    Alen Anto Abraham
-   01: Sequential search
+   09: Heap sort
 */
 #include <stdio.h>
 
