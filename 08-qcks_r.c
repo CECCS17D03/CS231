@@ -1,6 +1,6 @@
 /* Roll No:3
    Alen Anto Abraham
-   01: Sequential search
+   08: Quick sort:recursive
 */
 #include <stdio.h>
 
