@@ -1,6 +1,6 @@
 /* Roll No:3
    Alen Anto Abraham
-   01: Sequential search
+   24: Stack: Infix expression evaluation
 */
 #include <stdio.h>
 #include <stdlib.h>
